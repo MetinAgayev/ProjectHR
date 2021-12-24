@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\matinga\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\matinga\\.nuget\\packages"
+    ]
+  }
+}

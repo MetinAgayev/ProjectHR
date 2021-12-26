@@ -1,8 +1,9 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\matinga\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\matinga\\.nuget\\packages"
+      "C:\\Users\\metin\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\metin\\.nuget\\packages",
+      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ]
   }
 }

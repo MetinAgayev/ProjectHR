@@ -7,49 +7,47 @@ namespace ProyektHR.Models
 {
     class Employee
     {
-        private static int count = 1000;
-        public string Name { get; set; }
         public string No { get; set; }
-        public string FullName { get; set; }
+        public string Fullname { get; set; }
         public string Position { get; set; }
-        public int Salary { get; set; }
-        public Departament[] Departaments { get; set; }
-        public Employee(string name, string position, int salary,string Depname)
+        public string DepartmentName { get; set; }
+        private double _salary { get; set; }
+       
+        public int Count = 1000;
+    
+        public int isciCount = 0;
+        public Employee(/*string no,*/ string fullname, string position, double salary, string DepName)
         {
-            if (salary < 250)
-            {
-                Console.WriteLine("Maas 250den kicik ola bilmez");
-                return;
-            }
-            else if (position.Length<2)
-            {
-                Console.WriteLine("Duzgun vezife adi daxil edin");
-                return;
-            }
-           
-            
+
+            //No = no;
 
 
-            count++;
-            FullName = name;
+
+            Fullname = fullname;
             Position = position;
-            Salary = salary;
-            Name = Depname;
+            _salary = salary;
 
-           
-            No += Name.Substring(0, 2)+count;
+            DepartmentName = DepName;
           
 
+
         }
-        
-        
-       
+
+        public double Salary
+        {
+            get { return _salary; }
+            set
+            {
+                if (value > 250)
+                    _salary = value;
+            }
+
+        }
+
+
         public override string ToString()
         {
-            return $"SiraNomresi:{No}\nName:{FullName}\nPosition:{Position}\nSalary:{Salary}\nDepname:{Name}";
+            return $"Nomresi: {No} Adi: {Fullname}position: {Position} Maasi {Salary} Departmenti {DepartmentName }  ";
         }
-
-
-
     }
 }

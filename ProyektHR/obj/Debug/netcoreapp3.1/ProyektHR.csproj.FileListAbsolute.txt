@@ -12,3 +12,17 @@ C:\Users\matinga\Desktop\ProyektHR\ProyektHR\bin\Debug\netcoreapp3.1\ProyektHR.p
 C:\Users\matinga\Desktop\ProyektHR\ProyektHR\obj\Debug\netcoreapp3.1\ProyektHR.dll
 C:\Users\matinga\Desktop\ProyektHR\ProyektHR\obj\Debug\netcoreapp3.1\ProyektHR.pdb
 C:\Users\matinga\Desktop\ProyektHR\ProyektHR\obj\Debug\netcoreapp3.1\ProyektHR.genruntimeconfig.cache
+C:\Users\metin\OneDrive\Рабочий стол\ProyektHR\ProyektHR\obj\Debug\netcoreapp3.1\ProyektHR.csproj.AssemblyReference.cache
+C:\Users\metin\OneDrive\Рабочий стол\ProyektHR\ProyektHR\obj\Debug\netcoreapp3.1\ProyektHR.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\metin\OneDrive\Рабочий стол\ProyektHR\ProyektHR\obj\Debug\netcoreapp3.1\ProyektHR.AssemblyInfoInputs.cache
+C:\Users\metin\OneDrive\Рабочий стол\ProyektHR\ProyektHR\obj\Debug\netcoreapp3.1\ProyektHR.AssemblyInfo.cs
+C:\Users\metin\OneDrive\Рабочий стол\ProyektHR\ProyektHR\obj\Debug\netcoreapp3.1\ProyektHR.csproj.CoreCompileInputs.cache
+C:\Users\metin\OneDrive\Рабочий стол\ProyektHR\ProyektHR\obj\Debug\netcoreapp3.1\ProyektHR.dll
+C:\Users\metin\OneDrive\Рабочий стол\ProyektHR\ProyektHR\obj\Debug\netcoreapp3.1\ProyektHR.pdb
+C:\Users\metin\OneDrive\Рабочий стол\ProyektHR\ProyektHR\bin\Debug\netcoreapp3.1\ProyektHR.exe
+C:\Users\metin\OneDrive\Рабочий стол\ProyektHR\ProyektHR\bin\Debug\netcoreapp3.1\ProyektHR.deps.json
+C:\Users\metin\OneDrive\Рабочий стол\ProyektHR\ProyektHR\bin\Debug\netcoreapp3.1\ProyektHR.runtimeconfig.json
+C:\Users\metin\OneDrive\Рабочий стол\ProyektHR\ProyektHR\bin\Debug\netcoreapp3.1\ProyektHR.runtimeconfig.dev.json
+C:\Users\metin\OneDrive\Рабочий стол\ProyektHR\ProyektHR\bin\Debug\netcoreapp3.1\ProyektHR.dll
+C:\Users\metin\OneDrive\Рабочий стол\ProyektHR\ProyektHR\bin\Debug\netcoreapp3.1\ProyektHR.pdb
+C:\Users\metin\OneDrive\Рабочий стол\ProyektHR\ProyektHR\obj\Debug\netcoreapp3.1\ProyektHR.genruntimeconfig.cache

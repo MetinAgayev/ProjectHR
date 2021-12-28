@@ -444,9 +444,6 @@ namespace ProyektHR
 
             }
         }
-        static void Ortalama(ref HumanResourcesManager humanResourcesManager)
-        {
-
-        }
+      
     }
 }

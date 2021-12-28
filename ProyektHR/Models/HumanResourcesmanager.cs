@@ -67,7 +67,7 @@ namespace ProyektHR.Services
         }
 
 
-        public void EditEmploye(string pos, double salary)
+        public void EditEmployee(string pos, double salary)
         {
             Employee employe = null;
             foreach (Department item in Departments)
@@ -104,14 +104,19 @@ namespace ProyektHR.Services
 
         public void RemoveEmployee(string isci)
         {
-            //for (int i = 0; i < _employees.Length; i++)
-            //{
-            //    if (Employees[i] != null && _employees[i].No == isci)
-            //    {
-            //        _employees[i] = null;
-            //        return;
-            //    }
-            //}
+            foreach (var item in Departments)
+            {
+
+
+                for (int i = 0; i < item._employees.Length; i++)
+                {
+                    if (item.Employees[i] != null &&item._employees[i].No == isci)
+                    {
+                        item._employees[i] = null;
+                        return;
+                    }
+                }
+            }
         }
 
         public void ShowEmployee()

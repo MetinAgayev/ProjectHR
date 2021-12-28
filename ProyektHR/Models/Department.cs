@@ -13,7 +13,25 @@ namespace ProyektHR.Models
         public Employee[] Employees => _employees;
         public Employee[] _employees;
         public double Average { get; set; }
-        public double WorkerLimit { get; set; }
+        public double _workerlimit { get; set; }
+        public double WorkerLimit {
+            get
+            {
+                return _workerlimit;
+            }
+            set
+            {
+                foreach (var item in Employees)
+                {
+
+                
+                if (value<item.)
+                {
+                    Console.WriteLine("isci limitini kecmisiniz");
+                }
+
+            }
+        }
         public double SalaryLimit { get; set; }
 
 
@@ -27,29 +45,22 @@ namespace ProyektHR.Models
 
         }
 
-        //public double CalcSalaryAverage()
-        //{
-        //    double result = 0;
-        //    int count = 0;
-        //    foreach (var item in Ortalama.Employees)
-        //    {
+        public double CalcSalaryAverage()
+        {
+            double avarage = 0;
+            int count = 0;
+            foreach (var item in Employees)
+            {
 
+                if (item.DepartmentName != null )
+                {
+                    count++;
+                }
+                avarage = item.Salary / count;
+            }
 
-        //        for (int i = 0; i < item.No.Length; i++)
-        //        {
-        //            if(item.DepartmentName[i] == item.DepartmentName[i+1])
-        //            {
-        //                count++;
-        //                result = item.Salary / count;
-        //            }
-        //        }
-
-
-
-        //    }
-
-        //    return result;
-        //}
+            return avarage;
+        }
 
 
         public override string ToString()

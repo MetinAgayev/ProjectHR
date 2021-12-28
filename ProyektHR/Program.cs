@@ -59,7 +59,7 @@ namespace ProyektHR
                         break;
                     case 8:
                         Console.Clear();
-                        //RemoveEmployee(ref humanResourcesManager);
+                        RemoveEmployee(ref humanResourcesManager);
                         break;
                     default:
                         Console.Clear();
@@ -157,7 +157,7 @@ namespace ProyektHR
             foreach (Department item in humanResourcesManager.Departments)
             {
                 Console.WriteLine(item);
-                //Console.WriteLine(item.CalcSalaryAverage());
+                Console.WriteLine(item.CalcSalaryAverage());
                 Console.WriteLine("--------------------------------------------------");
             }
 
@@ -318,11 +318,41 @@ namespace ProyektHR
         }
         static void GetEmployeeByDepartment(ref HumanResourcesManager humanResourcesManager)
         {
-            Console.WriteLine("Departament adi daxil edin:");
-            string depNameIs = Console.ReadLine();
+            Console.Write("Gormek istediyin Departamentin adini daxil edin");
+            string Depname = Console.ReadLine();
+            bool checkdepName = true;
+            int count = 0;
+        start1:
+            while (checkdepName)
+            {
+                foreach (var item in humanResourcesManager.Departments)
+                {
 
-            humanResourcesManager.GetEmployeeByDepartment(depNameIs);
+                    foreach (Employee item1 in item.Employees)
+                    {
+                        if (item1.DepartmentName.ToLower() == Depname.ToLower())
+                        {
+                            count++;
+                            Console.WriteLine(item1);
+                        }
+                    }
+                }
+                if (count <= 0)
+                {
+                    Console.WriteLine("Daxil Etdiyniz adda Departament movcud deyil");
+                    Console.Write("Duzgun Departament adi daxil edin: ");
+                    Depname = Console.ReadLine();
+                    goto start1;
+                }
 
+                else
+                {
+                    checkdepName = false;
+
+                }
+                count = 0;
+
+            }
         }
         static void EditEmployee(ref HumanResourcesManager humanResourcesManager)
         {
@@ -413,51 +443,61 @@ namespace ProyektHR
 
             }
         }
-        //static void RemoveEmployee(ref HumanResourcesManager humanResourcesManager)
-        //{
-
-        //    if (humanResourcesManager.Employees.Length <= 0)
-        //    {
-        //        Console.WriteLine("Siyahi bosdur evvelce isci daxil edin: ");
-        //        return;
-        //    }
-        //    foreach (Employee item in humanResourcesManager.Employees)
-        //    {
-        //        if (item != null)
-        //        {
-        //            Console.WriteLine(item);
-        //        }
-        //    }
-        //    Console.Write("Silmek istediyiniz iscinin nomresini daxil edin: ");
-        //checkNo:
-        //    string iscniNo = Console.ReadLine();
-        //    bool checkEmpNo = true;
-        //    int count = 0;
-        //    while (checkEmpNo)
-        //    {
-        //        foreach (Employee item in humanResourcesManager.Employees)
-        //        {
-        //            if (item.No == iscniNo)
-        //            {
-        //                count++;
-        //            }
-        //        }
-        //        if (count <= 0)
-        //        {
-        //            Console.WriteLine("Bele bir isci movcud deyil");
-        //            Console.Write("Duzgun isci nomresi daxil edin: ");
-        //            goto checkNo;
-        //        }
-        //        else
-        //        {
-        //            checkEmpNo = false;
+        static void RemoveEmployee(ref HumanResourcesManager humanResourcesManager)
+        {
+            foreach (var item in humanResourcesManager.Departments)
+            {
 
 
-        //        }
-        //        count = 0;
-        //        humanResourcesManager.RemoveEmployee(iscniNo);
+                if (item.Employees.Length <= 0)
+                {
+                    Console.WriteLine("Siyahi bosdur evvelce isci daxil edin: ");
+                    return;
+                }
+                foreach (Employee item1 in item.Employees)
+                {
+                    if (item != null)
+                    {
+                        Console.WriteLine(item1);
+                    }
+                }
+            }
+            Console.Write("Silmek istediyiniz iscinin nomresini daxil edin: ");
+        checkNo:
+            string iscniNo = Console.ReadLine();
+            bool checkEmpNo = true;
+            int count = 0;
+            while (checkEmpNo)
+            {
 
-        //   }
-    }
+                foreach (var item in humanResourcesManager.Departments)
+                {
+
+
+                    foreach (Employee item1 in item.Employees)
+                    {
+                        if (item1.No == iscniNo)
+                        {
+                            count++;
+                        }
+                    }
+                }
+                if (count <= 0)
+                {
+                    Console.WriteLine("Bele bir isci movcud deyil");
+                    Console.Write("Duzgun isci nomresi daxil edin: ");
+                    goto checkNo;
+                }
+                else
+                {
+                    checkEmpNo = false;
+
+
+                }
+                count = 0;
+                humanResourcesManager.RemoveEmployee(iscniNo);
+
+            }
+        }
 }
-    //}
+}

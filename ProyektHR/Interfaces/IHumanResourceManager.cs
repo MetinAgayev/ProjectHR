@@ -20,6 +20,6 @@ namespace ProyektHR.Interfaces
 
         void GetEmployeeByDepartment(string DepName);
         void ShowEmployee();
-        void EditEmploye(string pos, double salary);
+        void EditEmployee(string pos, double salary);
     }
 }

@@ -8,22 +8,20 @@ namespace ProyektHR.Models
     class Employee
     {
         public string No { get; set; }
-
         public string Fullname { get; set; }
         public string Position { get; set; }
         public string DepartmentName { get; set; }
         public double _salary { get; set; }
-        //public Department[] DepartmentName { get; set; }
 
         public static int Count = 1000;
-        //public int SalaryCount = 0;
+       
 
         public Employee(string fullname, string position, double salary, string DepName)
         {
             Count++;
 
 
-            No = DepName.Substring(0, 2).ToUpper() + Count;  // hr1001
+            No = DepName.Substring(0, 2).ToUpper() + Count;  
             Fullname = fullname;
             Position = position;
             _salary = salary;

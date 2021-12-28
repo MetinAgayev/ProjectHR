@@ -59,7 +59,7 @@ namespace ProyektHR
                         break;
                     case 8:
                         Console.Clear();
-                        RemoveEmployee(ref humanResourcesManager);
+                        //RemoveEmployee(ref humanResourcesManager);
                         break;
                     default:
                         Console.Clear();
@@ -166,16 +166,21 @@ namespace ProyektHR
         }
         static void ShowEmpList(ref HumanResourcesManager humanResourcesManager)
         {
-            if (humanResourcesManager.Employees.Length <= 0)
+            foreach (var item in humanResourcesManager.Departments)
             {
-                Console.WriteLine("Siyahi bosdur, evvelce daxil edin.");
-                return;
 
-            }
-            foreach (Employee item in humanResourcesManager.Employees)
-            {
-                Console.WriteLine(item);
-                Console.WriteLine("----------------------------------------------------");
+
+                if (item.Employees.Length <= 0)
+                {
+                    Console.WriteLine("Siyahi bosdur, evvelce daxil edin.");
+                    return;
+
+                }
+                foreach (Employee item1 in item.Employees)
+                {
+                    Console.WriteLine(item1);
+                    Console.WriteLine("----------------------------------------------------");
+                }
             }
         }
         static void AddDepartmen(ref HumanResourcesManager humanResourcesManager)
@@ -328,14 +333,17 @@ namespace ProyektHR
         start:
             while (checkEmpName)
             {
-                foreach (Employee item in humanResourcesManager.Employees)
+                foreach (var item in humanResourcesManager.Departments)
                 {
-                    if (item.No.ToLower() == empName.ToLower())
+
+                    foreach (Employee item1 in item.Employees)
                     {
-                        count++;
+                        if (item1.No.ToLower() == empName.ToLower())
+                        {
+                            count++;
+                        }
                     }
                 }
-
                 if (count <= 0)
                 {
                     Console.WriteLine("Daxil Etdiyniz adda isci nomresi yoxdur");
@@ -363,15 +371,19 @@ namespace ProyektHR
                     Console.WriteLine("Isci vezifesi 2 herfden az ola bilmez:");
                     namePos = Console.ReadLine();
                 }
-
-                foreach (Employee item in humanResourcesManager.Employees)
+                foreach (var item in humanResourcesManager.Departments)
                 {
-                    if (item.No.ToLower() == empName)
+
+
+                    foreach (Employee item1 in item.Employees)
                     {
-                        item.Position = namePos;
+                        if (item1.No.ToLower() == empName)
+                        {
+                            item1.Position = namePos;
+                        }
+
+
                     }
-
-
                 }
                 Console.Write("Yeni isci salary daxil edin: ");
                 string nameSal = Console.ReadLine();
@@ -383,67 +395,69 @@ namespace ProyektHR
                     Console.WriteLine("Isci maasi 250den  az ola bilmez:");
                     nameSal = Console.ReadLine();
                 }
-
-                foreach (Employee item in humanResourcesManager.Employees)
+                foreach (var item in humanResourcesManager.Departments)
                 {
-                    if (item.No.ToLower() == empName)
+
+
+                    foreach (Employee item1 in item.Employees)
                     {
-                        item.Salary = nameSalary;
+                        if (item1.No.ToLower() == empName.ToLower())
+                        {
+                            item1.Salary = nameSalary;
+                        }
+
+
                     }
-
-
                 }
-
 
 
             }
         }
-        static void RemoveEmployee(ref HumanResourcesManager humanResourcesManager)
-        {
+        //static void RemoveEmployee(ref HumanResourcesManager humanResourcesManager)
+        //{
 
-            if (humanResourcesManager.Employees.Length <= 0)
-            {
-                Console.WriteLine("Siyahi bosdur evvelce isci daxil edin: ");
-                return;
-            }
-            foreach (Employee item in humanResourcesManager.Employees)
-            {
-                if (item != null)
-                {
-                    Console.WriteLine(item);
-                }
-            }
-            Console.Write("Silmek istediyiniz iscinin nomresini daxil edin: ");
-        checkNo:
-            string iscniNo = Console.ReadLine();
-            bool checkEmpNo = true;
-            int count = 0;
-            while (checkEmpNo)
-            {
-                foreach (Employee item in humanResourcesManager.Employees)
-                {
-                    if (item.No == iscniNo)
-                    {
-                        count++;
-                    }
-                }
-                if (count <= 0)
-                {
-                    Console.WriteLine("Bele bir isci movcud deyil");
-                    Console.Write("Duzgun isci nomresi daxil edin: ");
-                    goto checkNo;
-                }
-                else
-                {
-                    checkEmpNo = false;
+        //    if (humanResourcesManager.Employees.Length <= 0)
+        //    {
+        //        Console.WriteLine("Siyahi bosdur evvelce isci daxil edin: ");
+        //        return;
+        //    }
+        //    foreach (Employee item in humanResourcesManager.Employees)
+        //    {
+        //        if (item != null)
+        //        {
+        //            Console.WriteLine(item);
+        //        }
+        //    }
+        //    Console.Write("Silmek istediyiniz iscinin nomresini daxil edin: ");
+        //checkNo:
+        //    string iscniNo = Console.ReadLine();
+        //    bool checkEmpNo = true;
+        //    int count = 0;
+        //    while (checkEmpNo)
+        //    {
+        //        foreach (Employee item in humanResourcesManager.Employees)
+        //        {
+        //            if (item.No == iscniNo)
+        //            {
+        //                count++;
+        //            }
+        //        }
+        //        if (count <= 0)
+        //        {
+        //            Console.WriteLine("Bele bir isci movcud deyil");
+        //            Console.Write("Duzgun isci nomresi daxil edin: ");
+        //            goto checkNo;
+        //        }
+        //        else
+        //        {
+        //            checkEmpNo = false;
 
 
-                }
-                count = 0;
-                humanResourcesManager.RemoveEmployee(iscniNo);
+        //        }
+        //        count = 0;
+        //        humanResourcesManager.RemoveEmployee(iscniNo);
 
-            }
-        }
-      
+        //   }
     }
 }
+    //}

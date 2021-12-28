@@ -10,19 +10,20 @@ namespace ProyektHR.Models
     {
 
         public string Name { get; set; }
-        public Employee Employee { get; set; }
+        public Employee[] Employees => _employees;
+        public Employee[] _employees;
         public double Average { get; set; }
         public double WorkerLimit { get; set; }
         public double SalaryLimit { get; set; }
-      
 
 
+        
         public Department(string name, double workerLimit, double salaryLimit)
         {
             Name = name;
             WorkerLimit = workerLimit;
             SalaryLimit = salaryLimit;
-
+       _employees   = new Employee[0];
 
         }
 

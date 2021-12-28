@@ -10,7 +10,7 @@ namespace ProyektHR.Interfaces
     interface IHumanResourceManager
     {
         Department[] Departments { get; }
-        Employee[] Employees { get; }
+
 
         void AddDepartment(string name, double workerLimit, double salaryLimit);
         //void GetDepartments(Department Departaments);

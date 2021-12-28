@@ -8,28 +8,38 @@ namespace ProyektHR.Models
     class Employee
     {
         public string No { get; set; }
+
         public string Fullname { get; set; }
         public string Position { get; set; }
         public string DepartmentName { get; set; }
-        private double _salary { get; set; }
-       
-        public int Count = 1000;
-    
-        public int isciCount = 0;
-        public Employee(/*string no,*/ string fullname, string position, double salary, string DepName)
+        public double _salary { get; set; }
+        //public Department[] DepartmentName { get; set; }
+
+        public static int Count = 1000;
+        //public int SalaryCount = 0;
+
+        public Employee(string fullname, string position, double salary, string DepName)
         {
-
-            //No = no;
-
+            Count++;
 
 
+            No = DepName.Substring(0, 2).ToUpper() + Count;  // hr1001
             Fullname = fullname;
             Position = position;
             _salary = salary;
 
-            DepartmentName = DepName;
-          
 
+
+
+
+
+            DepartmentName = DepName;
+
+
+            //if (salary < 250)
+            //{
+
+            //}
 
         }
 
@@ -41,7 +51,6 @@ namespace ProyektHR.Models
                 if (value > 250)
                     _salary = value;
             }
-
         }
 
 

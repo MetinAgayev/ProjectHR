@@ -16,11 +16,11 @@ namespace ProyektHR.Services
         public Department[] Departments => _departments;
         public Department[] _departments;
        
-
         public HumanResourcesManager()
         {
             _departments = new Department[0];
             _employees = new Employee[0];
+
 
         }
 
@@ -33,11 +33,10 @@ namespace ProyektHR.Services
         }
 
 
-       
-
-        public void AddEmployee(/*string no,*/ string fullname, string position, double salary, string DepName)
+      
+        public void AddEmployee( string fullname, string position, double salary, string DepName)
         {
-            Employee employee = new Employee(/*no,*/ fullname, position, salary, DepName);
+            Employee employee = new Employee( fullname, position, salary, DepName);
             Array.Resize(ref _employees, _employees.Length + 1);
             _employees[_employees.Length - 1] = employee;
         }
@@ -56,13 +55,35 @@ namespace ProyektHR.Services
             }
 
             department.Name = name;
-            
+           
         }
 
 
-        public void EditEmploye()
+        public void EditEmploye(string pos, double salary)
         {
-            throw new NotImplementedException();
+            Employee employe = null;
+
+            foreach (Employee item in _employees)
+            {
+                if (item.Position == pos)
+                {
+                    employe = item;
+                    break;
+                }
+            }
+            foreach (Employee item in _employees)
+            {
+                if (item.Salary == salary)
+                {
+                    employe = item;
+                    break;
+                }
+            }
+
+            employe.Position = pos;
+            employe.Salary = salary;
+
+
         }
 
         public void GetDepartments(Department Departaments)
@@ -70,14 +91,33 @@ namespace ProyektHR.Services
             throw new NotImplementedException();
         }
 
-        public void RemoveEmployee()
+        public void RemoveEmployee(string isci)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < _employees.Length; i++)
+            {
+                if (Employees[i] != null && _employees[i].No == isci)
+                {
+                    _employees[i] = null;
+                    return;
+                }
+            }
         }
 
         public void ShowEmployee()
         {
             throw new NotImplementedException();
+        }
+
+        public void GetEmployeeByDepartment(string DepName)
+        {
+            foreach (Employee item in _employees)
+            {
+                if (item.DepartmentName == DepName)
+                {
+                    Console.WriteLine(item);
+                }
+
+            }
         }
 
     }

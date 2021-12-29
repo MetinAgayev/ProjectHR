@@ -242,13 +242,61 @@ namespace ProyektHR
         static void AddEmployee(ref HumanResourcesManager humanResourcesManager)
         {
 
+            Console.Write("Elave edeceyiniz Departmenti daxil edin: ");
 
+            string nameDep = Console.ReadLine();
+            bool chechNameD = true;
+            int countCheck = 0;
 
             if (humanResourcesManager.Departments.Length <= 0)
             {
                 Console.WriteLine("Evvelce department yaradin.");
                 return;
 
+            }
+            while (chechNameD)
+            {
+                foreach (Department item in humanResourcesManager.Departments)
+                {
+
+                    if (nameDep == item.Name)
+                    {
+                        countCheck++;
+                    }
+                  
+
+                }
+
+                if (countCheck <= 0)
+                {
+                    Console.WriteLine("Bu departament movcud deyil");
+                    Console.Write("Duzgun daxil edin: ");
+                    nameDep = Console.ReadLine();
+
+                }
+
+
+                else
+                {
+
+                    chechNameD = false;
+                }
+                countCheck = 0;
+               
+              
+
+
+            }
+            foreach (var item in humanResourcesManager.Departments)
+            {
+                if (item.Name==nameDep)
+                {
+                    if (item.Employees.Length >item.WorkerLimit)
+                    {
+                        Console.WriteLine("isci limitini kecmsiniz");
+                        return;
+                    }
+                }
             }
 
 
@@ -277,42 +325,11 @@ namespace ProyektHR
                 salary = Console.ReadLine();
 
             }
-            Console.Write("Elave edeceyiniz Departmenti daxil edin: ");
-            string nameDep = Console.ReadLine();
-            bool chechNameD = true;
-            int countCheck = 0;
 
 
-            while (chechNameD)
-            {
-                foreach (Department item in humanResourcesManager.Departments)
-                {
-                    if (nameDep == item.Name)
-                    {
-                        countCheck++;
-                    }
-
-                }
-
-                if (countCheck <= 0)
-                {
-                    Console.WriteLine("Bu departament movcud deyil");
-                    Console.Write("Duzgun daxil edin: ");
-                    nameDep = Console.ReadLine();
-
-                }
 
 
-                else
-                {
-
-                    chechNameD = false;
-                }
-                countCheck = 0;
-                humanResourcesManager.AddEmployee(name, workerPos, salaryNum, nameDep);
-
-
-            }
+            humanResourcesManager.AddEmployee(name, workerPos, salaryNum, nameDep);
 
 
         }

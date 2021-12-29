@@ -20,27 +20,27 @@ namespace ProyektHR.Models
                 return _workerlimit;
             }
             set
-            {
-                foreach (var item in Employees)
-                {
-
-                
-                if (value<item.)
-                {
-                    Console.WriteLine("isci limitini kecmisiniz");
-                }
-
+            {  ;
             }
         }
-        public double SalaryLimit { get; set; }
+        public double _salarylimit { get; set; }
+        public double SalaryLimit {
+            get
+            {
+                return _salarylimit;
+            }
+            set
+            {
+                ;
+            }
 
-
+           }
         
         public Department(string name, double workerLimit, double salaryLimit)
         {
             Name = name;
-            WorkerLimit = workerLimit;
-            SalaryLimit = salaryLimit;
+            _workerlimit = workerLimit;
+          _salarylimit = salaryLimit;
        _employees   = new Employee[0];
 
         }

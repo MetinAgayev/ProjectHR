@@ -126,14 +126,19 @@ namespace ProyektHR.Services
 
         public void GetEmployeeByDepartment(string DepName)
         {
-            //foreach (Employee item in _employees)
-            //{
-            //    if (item.DepartmentName == DepName)
-            //    {
-            //        Console.WriteLine(item);
-            //    }
+            foreach (var item in Departments)
+            {
 
-            //}
+
+                foreach (Employee item1 in item.Employees)
+                {
+                    if (item1.DepartmentName == DepName)
+                    {
+                        Console.WriteLine(item);
+                    }
+
+                }
+            }
         }
 
 

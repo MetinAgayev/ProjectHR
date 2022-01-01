@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\matinga\\Desktop\\ProyektHR\\ProyektHR\\ProyektHR.csproj": {}
+    "C:\\Users\\metin\\OneDrive\\Рабочий стол\\ProyektHR\\ProyektHR\\ProyektHR.csproj": {}
   },
   "projects": {
-    "C:\\Users\\matinga\\Desktop\\ProyektHR\\ProyektHR\\ProyektHR.csproj": {
+    "C:\\Users\\metin\\OneDrive\\Рабочий стол\\ProyektHR\\ProyektHR\\ProyektHR.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\matinga\\Desktop\\ProyektHR\\ProyektHR\\ProyektHR.csproj",
+        "projectUniqueName": "C:\\Users\\metin\\OneDrive\\Рабочий стол\\ProyektHR\\ProyektHR\\ProyektHR.csproj",
         "projectName": "ProyektHR",
-        "projectPath": "C:\\Users\\matinga\\Desktop\\ProyektHR\\ProyektHR\\ProyektHR.csproj",
-        "packagesPath": "C:\\Users\\matinga\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\matinga\\Desktop\\ProyektHR\\ProyektHR\\obj\\",
+        "projectPath": "C:\\Users\\metin\\OneDrive\\Рабочий стол\\ProyektHR\\ProyektHR\\ProyektHR.csproj",
+        "packagesPath": "C:\\Users\\metin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\metin\\OneDrive\\Рабочий стол\\ProyektHR\\ProyektHR\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\matinga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\metin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -54,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

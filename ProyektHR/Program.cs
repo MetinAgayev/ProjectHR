@@ -157,6 +157,7 @@ namespace ProyektHR
             foreach (Department item in humanResourcesManager.Departments)
             {
                 Console.WriteLine(item);
+                Console.WriteLine("isci maas ortalamasi:");
                 Console.WriteLine(item.CalcSalaryAverage());
                 Console.WriteLine("--------------------------------------------------");
             }
@@ -282,22 +283,24 @@ namespace ProyektHR
                     chechNameD = false;
                 }
                 countCheck = 0;
-               
-              
+  
+                
+
 
 
             }
             foreach (var item in humanResourcesManager.Departments)
             {
-                if (item.Name==nameDep)
+                if (item.Name == nameDep)
                 {
-                    if (item.Employees.Length >item.WorkerLimit)
+                    if (item.Employees.Length > item.WorkerLimit-1)
                     {
                         Console.WriteLine("isci limitini kecmsiniz");
                         return;
                     }
                 }
             }
+
 
 
             Console.Write("Elave edeceyiniz Iscinin adini daxil edin: ");
@@ -327,11 +330,30 @@ namespace ProyektHR
             }
 
 
+            
 
 
             humanResourcesManager.AddEmployee(name, workerPos, salaryNum, nameDep);
+            double umumimaas = 0;
+            foreach (Department item in humanResourcesManager.Departments)
+            {
 
+                foreach (Employee item2 in item.Employees)
+                {
 
+                    if (nameDep == item.Name)
+                    {
+
+                        umumimaas = umumimaas + item2.Salary;
+
+                    }
+                    if (umumimaas > item.SalaryLimit)
+                    {
+                        Console.WriteLine("isci maas limit kecdiniz");
+
+                    }
+                }
+            }
         }
         static void GetEmployeeByDepartment(ref HumanResourcesManager humanResourcesManager)
         {

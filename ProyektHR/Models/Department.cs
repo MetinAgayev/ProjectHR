@@ -48,18 +48,21 @@ namespace ProyektHR.Models
         public double CalcSalaryAverage()
         {
             double avarage = 0;
+            double umumimaas = 0;
             int count = 0;
-            foreach (var item in Employees)
+            foreach (Employee item in Employees)
             {
-
-                if (item.DepartmentName != null )
+               
+                if (item.DepartmentName == Name )
                 {
                     count++;
+                    avarage = avarage + item.Salary;
+                   
                 }
-                avarage = item.Salary / count;
+                umumimaas = avarage / count;
             }
 
-            return avarage;
+            return umumimaas;
         }
 
 

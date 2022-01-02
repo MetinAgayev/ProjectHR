@@ -34,18 +34,27 @@ namespace ProyektHR.Services
 
 
 
-        public void AddEmployee(string fullname, string position, double salary, string DepName)
+        public void AddEmployee(string fullname, string position, double salary, string DepName,double salarylimit)
         {
             foreach (Department item in Departments)
             {
-                if (item.Employees!=null &&item.Name.ToLower() == DepName.ToLower())
+                if (salarylimit<item.SalaryLimit)
                 {
-                    Employee employee = new Employee(fullname, position, salary, DepName);
 
-                    Array.Resize(ref item._employees, item._employees.Length + 1);
-                    item._employees[item._employees.Length - 1] = employee;
-                    break;
+                    if (item.Employees != null && item.Name.ToLower() == DepName.ToLower())
+                    {
+                        Employee employee = new Employee(fullname, position, salary, DepName);
+
+                        Array.Resize(ref item._employees, item._employees.Length + 1);
+                        item._employees[item._employees.Length - 1] = employee;
+                        break;
+                    }
                 }
+                else
+                {
+                    Console.WriteLine("isci maas limitini kecmisiniz");
+                }
+                
             }
         }
 
@@ -107,10 +116,9 @@ namespace ProyektHR.Services
             foreach (var item in Departments)
             {
 
-
                 for (int i = 0; i < item._employees.Length; i++)
                 {
-                    if (item.Employees[i] != null &&item._employees[i].No == isci)
+                    if (item._employees[i] != null &&item._employees[i].No == isci)
                     {
                         item._employees[i] = null;
                         return;
@@ -126,15 +134,21 @@ namespace ProyektHR.Services
 
         public void GetEmployeeByDepartment(string DepName)
         {
+
+
+
             foreach (var item in Departments)
             {
-
-
-                foreach (Employee item1 in item.Employees)
+                if (item != null)
                 {
-                    if (item1.DepartmentName == DepName)
+
+                    foreach (Employee item1 in item.Employees)
                     {
-                        Console.WriteLine(item);
+                        if (item1.DepartmentName == DepName)
+                        {
+                            Console.WriteLine(item);
+                        }
+
                     }
 
                 }

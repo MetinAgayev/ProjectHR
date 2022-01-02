@@ -20,7 +20,13 @@ namespace ProyektHR.Models
                 return _workerlimit;
             }
             set
-            {  ;
+            {
+                if (value < 1)
+                {
+                    Console.WriteLine("Isci sayi birden az ola bilmez");
+                   
+                }
+                _workerlimit = value;
             }
         }
         public double _salarylimit { get; set; }
@@ -31,7 +37,11 @@ namespace ProyektHR.Models
             }
             set
             {
-                ;
+                if (value<250)
+                {
+                    Console.WriteLine("isci maasi 250den az ola bilmez");
+                }
+                _salarylimit = value;
             }
 
            }
@@ -57,7 +67,7 @@ namespace ProyektHR.Models
                 {
                     count++;
                     avarage = avarage + item.Salary;
-                   
+ 
                 }
                 umumimaas = avarage / count;
             }

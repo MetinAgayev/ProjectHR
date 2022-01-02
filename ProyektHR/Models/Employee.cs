@@ -25,19 +25,10 @@ namespace ProyektHR.Models
             Fullname = fullname;
             Position = position;
             _salary = salary;
-
-
-
-
-
-
             DepartmentName = DepName;
 
 
-            //if (salary < 250)
-            //{
-
-            //}
+           
 
         }
 
@@ -47,6 +38,9 @@ namespace ProyektHR.Models
             set
             {
                 if (value > 250)
+                {
+                    Console.WriteLine("Maas 250den az ola bilmez");
+                }
                     _salary = value;
             }
         }

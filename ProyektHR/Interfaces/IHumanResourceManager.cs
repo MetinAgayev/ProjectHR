@@ -15,7 +15,7 @@ namespace ProyektHR.Interfaces
         void AddDepartment(string name, double workerLimit, double salaryLimit);
         //void GetDepartments(Department Departaments);
         void EditDepartments(string name, double workerLimit, double salaryLimit);
-        void AddEmployee(string fullname, string position, double salary, string DepName);
+        void AddEmployee(string fullname, string position, double salary, string DepName,double salarylimit);
         void RemoveEmployee(string DepName);
 
         void GetEmployeeByDepartment(string DepName);

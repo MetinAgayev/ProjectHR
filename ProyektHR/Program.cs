@@ -391,6 +391,7 @@ namespace ProyektHR
         }
         static void EditEmployee(ref HumanResourcesManager humanResourcesManager)
         {
+            
             Console.Write("Duzelis Etmek Isdediyniz Iscinin Nomresini Daxil Et");
             string empName = Console.ReadLine();
             bool checkEmpName = true;
@@ -426,7 +427,7 @@ namespace ProyektHR
 
 
 
-
+              
                 Console.Write("Yeni isci vezifesi daxil edin: ");
                 string namePos = Console.ReadLine();
 
@@ -450,6 +451,7 @@ namespace ProyektHR
 
                     }
                 }
+            check:
                 Console.Write("Yeni isci salary daxil edin: ");
                 string nameSal = Console.ReadLine();
                 int nameSalary;
@@ -459,6 +461,7 @@ namespace ProyektHR
                 {
                     Console.WriteLine("Isci maasi 250den  az ola bilmez:");
                     nameSal = Console.ReadLine();
+                    goto check;
                 }
                 foreach (var item in humanResourcesManager.Departments)
                 {
@@ -483,7 +486,7 @@ namespace ProyektHR
 
                     }
                 }
-              
+                humanResourcesManager.EditEmployee(namePos, nameSalary);
 
 
             }

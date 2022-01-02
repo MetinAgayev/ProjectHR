@@ -329,26 +329,26 @@ namespace ProyektHR
                 salary = Console.ReadLine();
 
             }
-            double umumimaas = 0;
-            foreach (Department item in humanResourcesManager.Departments)
-            {
+            //double umumimaas = 0;
+            //foreach (Department item in humanResourcesManager.Departments)
+            //{
 
-                foreach (Employee item2 in item.Employees)
-                {
+            //    foreach (Employee item2 in item.Employees)
+            //    {
 
-                    if ( item2.DepartmentName==nameDep)
-                    {
+            //        if ( item2.DepartmentName==nameDep)
+            //        {
 
-                        umumimaas = umumimaas + item2.Salary;
+            //            umumimaas = umumimaas + item2.Salary;
 
-                    }
-                    if (umumimaas > item.SalaryLimit)
-                    {
-                        Console.WriteLine("isci maas limit kecdiniz");
-                        return;
-                    }
-                }
-            }
+            //        }
+            //        if (umumimaas > item.SalaryLimit)
+            //        {
+            //            Console.WriteLine("isci maas limit kecdiniz");
+            //            return;
+            //        }
+            //    }
+            //}
             humanResourcesManager.AddEmployee(name, workerPos, salaryNum, nameDep, salaryNum);
         }
         static void GetEmployeeByDepartment(ref HumanResourcesManager humanResourcesManager)

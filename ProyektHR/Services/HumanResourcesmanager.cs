@@ -116,11 +116,11 @@ namespace ProyektHR.Services
             foreach (var item in Departments)
             {
 
-                for (int i = 0; i < item._employees.Length; i++)
+                for (int i = 0; i < item.Employees.Length; i++)
                 {
-                    if (item._employees[i] != null &&item._employees[i].No == isci)
+                    if (item._employees[i] != null &&item.Employees[i].No == isci)
                     {
-                        item._employees[i] = null;
+                        item.Employees[i] = null;
                         return;
                     }
                 }
